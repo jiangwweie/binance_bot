@@ -1,0 +1,10 @@
+# 忽略文件
+venv/
+.env
+data/
+logs/
+__pycache__/
+*.pyc
+*.log
+*.db
+config/settings.py
