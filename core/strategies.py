@@ -1,16 +1,17 @@
 # 交易策略
 # core/strategies.py
+import logging
 from dataclasses import dataclass
 from datetime import datetime
-import logging
-import talib
+from typing import Optional
+
 import numpy as np
-from typing import List, Optional
-from config.settings import Settings
+import talib
+
 from core.database import DatabaseManager
+from core.exchange import BinanceFutureClient
 from core.patterns import CandlePatternDetector
 from core.risk import RiskManager
-from core.exchange import BinanceFutureClient
 
 
 @dataclass
@@ -56,6 +57,7 @@ class ProfessionalPinBarStrategy(BaseStrategy):
         try:
             # 获取当前时间框架数据
             current_data = self._get_ohlcv(symbol, timeframe)
+            print('开始分析数据', current_data)
             if len(current_data) < 50:
                 return None
 
@@ -77,7 +79,7 @@ class ProfessionalPinBarStrategy(BaseStrategy):
 
                 # 检测吞没形态
                 if prev_candle and (
-                engulf_signal := self.pattern_detector.detect_engulfing(current_candle, prev_candle)):
+                        engulf_signal := self.pattern_detector.detect_engulfing(current_candle, prev_candle)):
                     signals.append(self._create_signal(
                         symbol, timeframe, engulf_signal, current_candle, trend
                     ))
