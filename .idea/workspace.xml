@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b51b1b4-df23-4151-b9c5-e7ec36f3d16b" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/binance_bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/binance_bot.iml" afterDir="false" />
+    <list default="true" id="7b51b1b4-df23-4151-b9c5-e7ec36f3d16b" name="更改" comment="2025-06-03">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/exchange.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/exchange.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/patterns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/strategies.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/strategies.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/scheduler.py" afterDir="false" />
     </list>
@@ -175,8 +174,17 @@
       <workItem from="1740220120741" duration="11000" />
       <workItem from="1740220141324" duration="1401000" />
       <workItem from="1740227163403" duration="13370000" />
-      <workItem from="1748954882912" duration="79000" />
+      <workItem from="1748954882912" duration="7862000" />
     </task>
+    <task id="LOCAL-00001" summary="2025-06-03">
+      <option name="closed" value="true" />
+      <created>1748955134700</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748955134700</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,9 +201,13 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="2025-06-03" />
+    <option name="LAST_COMMIT_MESSAGE" value="2025-06-03" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/binance_bot$exchange.coverage" NAME="exchange 覆盖结果" MODIFIED="1740233607836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/binance_bot$main.coverage" NAME="main 覆盖结果" MODIFIED="1748954911121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/binance_bot$main.coverage" NAME="main 覆盖结果" MODIFIED="1748964504090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/binance_bot$strategies.coverage" NAME="strategies Coverage Results" MODIFIED="1740214584890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
   </component>
 </project>

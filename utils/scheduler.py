@@ -69,8 +69,16 @@ class SchedulerManager:
         self.db.log_signal(signal)
 
         # 发送通知
-        msg = f"🚨 新交易信号 {signal.symbol} {signal.timeframe} {signal.direction}"
-        self.notifier.send("交易信号",msg)
+        msg = (f"🚨 新交易信号：{signal.symbol} "
+               f"时间级别：{signal.timeframe} "
+               f"交易方向：{signal.direction}"
+               f"入场点位：{signal.entry_price}"
+               f"止盈点位：{signal.take_profit}"
+               f"盈利点数：{abs(signal.take_profit - signal.entry_price)}"
+               f"止损点位：{signal.stop_loss}"
+               f"亏损点数：{abs(signal.stop_loss - signal.entry_price)}")
+        print(f"交易信号={msg}", )
+        self.notifier.send("交易信号", msg)
 
         # 执行风控检查
         # if self.strategy.risk_manager.validate_signal(signal):

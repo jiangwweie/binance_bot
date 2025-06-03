@@ -20,13 +20,15 @@ class CandlePatternDetector:
         # 看涨Pin Bar（长下影）
         if (candle['close'] > candle['open'] and
                 (candle['open'] - candle['low']) > 2 * body):
+            print(f"发现长下影线,开盘价={candle['open']},最高= {candle['high']},最低= {candle['low']}, 收盘={candle['close']}")
             return 'bullish'
 
         # 看跌Pin Bar（长上影）
         if (candle['close'] < candle['open'] and
                 (candle['high'] - candle['open']) > 2 * body):
+            print(f"发现长上影线,开盘价={candle['open']},最高= {candle['high']},最低= {candle['low']}, 收盘={candle['close']}")
             return 'bearish'
-
+        print(f"中性,开盘价={candle['open']},最高= {candle['high']},最低= {candle['low']}, 收盘={candle['close']}")
         return None
 
     @staticmethod
@@ -47,12 +49,12 @@ class CandlePatternDetector:
         if (current['close'] > current['open'] and
                 current['open'] < previous['close'] and
                 current['close'] > previous['open']):
-            return 'bullish'
+            return 'BULLISH'
 
         # 看跌吞没
         if (current['close'] < current['open'] and
                 current['open'] > previous['close'] and
                 current['close'] < previous['open']):
-            return 'bearish'
+            return 'BEARISH'
 
         return None
