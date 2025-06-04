@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b51b1b4-df23-4151-b9c5-e7ec36f3d16b" name="更改" comment="2025-06-03">
+    <list default="true" id="7b51b1b4-df23-4151-b9c5-e7ec36f3d16b" name="更改" comment="2025-06-03-02">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/patterns.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/patterns.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/strategies.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/strategies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/notifiers.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/notifiers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/scheduler.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/scheduler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,12 +31,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/jiangwweie/binance_bot.git&quot;,
-    &quot;accountId&quot;: &quot;38779fda-7be2-440d-902c-d08ab27043e8&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "jiangwweie"
   }
-}</component>
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/jiangwweie/binance_bot.git",
+    "accountId": "9a097733-a28d-42ae-b033-42e21b2070ca"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -45,29 +52,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.exchange.executor": "Run",
-    "Python.main.executor": "Debug",
-    "Python.strategies.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/jiangwei/Library/Mobile Documents/com~apple~CloudDocs/共享文件/coin/binance_bot/.venv/.venv1/lib/python3.9/site-packages",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.exchange.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.strategies.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jiangwei/Library/Mobile Documents/com~apple~CloudDocs/共享文件/coin/binance_bot/.venv/.venv1/lib/python3.9/site-packages&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/.venv/.venv1/lib/python3.9/site-packages" />
@@ -174,7 +181,8 @@
       <workItem from="1740220120741" duration="11000" />
       <workItem from="1740220141324" duration="1401000" />
       <workItem from="1740227163403" duration="13370000" />
-      <workItem from="1748954882912" duration="7862000" />
+      <workItem from="1748954882912" duration="12083000" />
+      <workItem from="1749000907804" duration="2200000" />
     </task>
     <task id="LOCAL-00001" summary="2025-06-03">
       <option name="closed" value="true" />
@@ -184,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748955134700</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2025-06-03">
+      <option name="closed" value="true" />
+      <created>1748964573579</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748964573579</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +223,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/binance_bot$exchange.coverage" NAME="exchange 覆盖结果" MODIFIED="1740233607836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
-    <SUITE FILE_PATH="coverage/binance_bot$main.coverage" NAME="main 覆盖结果" MODIFIED="1748964504090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/binance_bot$main.coverage" NAME="main 覆盖结果" MODIFIED="1749002989737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/binance_bot$strategies.coverage" NAME="strategies Coverage Results" MODIFIED="1740214584890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/core" />
   </component>
 </project>

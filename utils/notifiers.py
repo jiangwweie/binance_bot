@@ -47,67 +47,43 @@ class ServerChanNotifier(Notifier):
 
 class WechatWorkNotifier(Notifier):
     """
-    企业微信应用通知
+    企业微信机器人Webhook通知
     文档：https://work.weixin.qq.com/api/doc/90000/90136/91770
     """
 
     def __init__(self):
-        self.corpid = Settings.WECHATWORK_CORPID
-        self.corpsecret = Settings.WECHATWORK_SECRET
-        self.agentid = Settings.WECHATWORK_AGENTID
-        self.access_token = self._get_access_token()
-
-    def _get_access_token(self) -> Optional[str]:
-        """获取企业微信access_token"""
-        url = f"https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid={self.corpid}&corpsecret={self.corpsecret}"
-        try:
-            response = requests.get(url)
-            result = response.json()
-            if result.get("errcode") == 0:
-                return result["access_token"]
-            logging.error(f"获取企业微信token失败: {result.get('errmsg')}")
-            return None
-        except Exception as e:
-            logging.error(f"连接企业微信失败: {str(e)}")
-            return None
+        self.webhook_key = Settings.WECHATWORK_WEBHOOK_KEY
+        self.webhook_url = f"https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key={self.webhook_key}"
 
     def send(self, title: str, content: str) -> bool:
-        if not self.access_token:
-            logging.warning("企业微信access_token未获取")
-            return False
+        # 构建markdown消息，将标题和内容组合
+        # 注意：markdown内容中可以使用标题格式，但整个消息内容不能超过4096字节
+        markdown_content = f"## {title}\n{content}"
 
-        url = f"https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={self.access_token}"
         payload = {
-            "touser": "@all",
-            "msgtype": "textcard",
-            "agentid": self.agentid,
-            "textcard": {
-                "title": title,
-                "description": content,
-                "url": "URL",  # 可配置跳转链接
-                "btntxt": "详情"
-            },
-            "safe": 0
+            "msgtype": "markdown",
+            "markdown": {
+                "content": markdown_content
+            }
+        }
+
+        headers = {
+            "Content-Type": "application/json"
         }
 
         try:
-            response = requests.post(url, json=payload)
+            response = requests.post(self.webhook_url, headers=headers, data=json.dumps(payload))
             result = response.json()
 
             if result.get("errcode") == 0:
-                logging.info(f"企业微信通知成功: {title}")
+                logging.info(f"企业微信机器人通知成功: {title}")
                 return True
-
-            # token过期时自动刷新重试
-            if result.get("errcode") == 42001:
-                self.access_token = self._get_access_token()
-                return self.send(title, content)
-
-            logging.error(f"企业微信通知失败: {result.get('errmsg')}")
-            return False
+            else:
+                logging.error(f"企业微信机器人通知失败: {result.get('errmsg')}")
+                return False
 
         except Exception as e:
-            logging.error(f"企业微信连接异常: {str(e)}")
+            logging.error(f"企业微信机器人连接异常: {str(e)}")
             return False
 
 

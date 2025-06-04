@@ -53,8 +53,9 @@ class ProfessionalPinBarStrategy(BaseStrategy):
         self.higher_tf_map = {
             '5m': '15m',
             '15m': '4h',
-            '1h': '1d',
-            '4h': '1d'
+            '1h': '4h',
+            '4h': '1d',
+            '1d': '1W'
         }
 
     def analyze(self, symbol: str, timeframe: str) -> Optional[TradingSignal]:
@@ -177,7 +178,7 @@ class ProfessionalPinBarStrategy(BaseStrategy):
     @staticmethod
     def _calculate_stop_loss(candle: dict, direction: str, atr: float) -> float:
         """计算止损价格"""
-        if direction == 'BULLISH':  # 多头：止损设在最低点下方0.5倍ATR
+        if direction.upper() == 'BULLISH':  # 多头：止损设在最低点下方0.5倍ATR
             return candle['low'] - 0.5 * atr
         return candle['high'] + 0.5 * atr  # 空头：止损设在最高点上方0.5倍ATR
 
@@ -185,7 +186,7 @@ class ProfessionalPinBarStrategy(BaseStrategy):
     def _calculate_take_profit(candle: dict, direction: str, atr: float) -> float:
         """计算止盈价格（风险回报比3:1）"""
         risk_reward_ratio = 3.0
-        if direction == 'BULLISH':  # 多头：入场价+3倍ATR
+        if direction.upper() == 'BULLISH':  # 多头：入场价+3倍ATR
             return candle['close'] + risk_reward_ratio * atr
         return candle['close'] - risk_reward_ratio * atr  # 空头：入场价-3倍ATR
 
@@ -203,7 +204,7 @@ class ProfessionalPinBarStrategy(BaseStrategy):
     def _filter_signal(self, signal: TradingSignal, trend: str) -> bool:
         """信号过滤器"""
         # 趋势一致性过滤（重要）
-        if trend not in ["NEUTRAL", signal.direction]:
+        if trend not in ["NEUTRAL", signal.direction.upper()]:
             return False
 
         # （注释掉的）波动率过滤示例：需要时启用

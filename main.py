@@ -4,14 +4,14 @@ import logging
 from config.settings import Settings
 from core.strategies import ProfessionalPinBarStrategy
 from utils.scheduler import SchedulerManager
-from utils.notifiers import ServerChanNotifier
+from utils.notifiers import ServerChanNotifier, WechatWorkNotifier
 from core.database import DatabaseManager
 
 
 def main():
     # 初始化组件
     strategy = ProfessionalPinBarStrategy()
-    notifier = ServerChanNotifier()
+    notifier = WechatWorkNotifier()
     db = DatabaseManager()
 
     # 启动定时任务

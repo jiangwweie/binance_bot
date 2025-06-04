@@ -67,16 +67,15 @@ class SchedulerManager:
         """处理交易信号"""
         # 记录到数据库
         self.db.log_signal(signal)
-
         # 发送通知
-        msg = (f"🚨 新交易信号：{signal.symbol} "
-               f"时间级别：{signal.timeframe} "
-               f"交易方向：{signal.direction}"
-               f"入场点位：{signal.entry_price}"
-               f"止盈点位：{signal.take_profit}"
-               f"盈利点数：{abs(signal.take_profit - signal.entry_price)}"
-               f"止损点位：{signal.stop_loss}"
-               f"亏损点数：{abs(signal.stop_loss - signal.entry_price)}")
+        msg = (f"🚨🚨🚨：{signal.symbol}\n"
+               f"时间级别：{signal.timeframe}，"
+               f"交易方向：{'多⬆️' if signal.direction == 'BULLISH' else '空⬇️'}\n"
+               f"入场点位：{signal.entry_price}\n"
+               f"止盈点位：{signal.take_profit}\n"
+               f"盈利点数：{abs(signal.take_profit - signal.entry_price)}\n"
+               f"止损点位：{signal.stop_loss}\n"
+               f"亏损点数：{abs(signal.stop_loss - signal.entry_price)}\n")
         print(f"交易信号={msg}", )
         self.notifier.send("交易信号", msg)
 

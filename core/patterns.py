@@ -39,22 +39,22 @@ class CandlePatternDetector:
         :param previous: 前一根K线
         :return: 'bullish'/'bearish'/None
         """
-        body_current = abs(current['close'] - current['open'])
-        body_prev = abs(previous['close'] - previous['open'])
-
-        if body_current <= body_prev:
-            return None
-
-        # 看涨吞没
-        if (current['close'] > current['open'] and
-                current['open'] < previous['close'] and
-                current['close'] > previous['open']):
-            return 'BULLISH'
-
-        # 看跌吞没
-        if (current['close'] < current['open'] and
-                current['open'] > previous['close'] and
-                current['close'] < previous['open']):
-            return 'BEARISH'
+        # body_current = abs(current['close'] - current['open'])
+        # body_prev = abs(previous['close'] - previous['open'])
+        #
+        # if body_current <= body_prev:
+        #     return None
+        #
+        # # 看涨吞没
+        # if (current['close'] > current['open'] and
+        #         current['open'] < previous['close'] and
+        #         current['close'] > previous['open']):
+        #     return 'BULLISH'
+        #
+        # # 看跌吞没
+        # if (current['close'] < current['open'] and
+        #         current['open'] > previous['close'] and
+        #         current['close'] < previous['open']):
+        #     return 'BEARISH'
 
         return None
